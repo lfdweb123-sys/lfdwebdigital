@@ -6,7 +6,6 @@ import { Menu, X, Home, Briefcase, User, FolderOpen, Phone } from "lucide-react"
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Empêcher le scroll quand le menu est ouvert
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -36,18 +35,11 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          {menuItems.map((item, index) => (
-            <Link 
-              key={index}
-              href={item.href} 
-              className="hover:text-gold transition-colors text-sm lg:text-base font-medium"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Link href="/contact" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gold hover:text-black transition-all duration-300">
-            Contact rapide
-          </Link>
+          <Link href="/" className="hover:text-gold transition-colors text-sm lg:text-base font-medium">Accueil</Link>
+          <Link href="/#services" className="hover:text-gold transition-colors text-sm lg:text-base font-medium">Services</Link>
+          <Link href="/#profil" className="hover:text-gold transition-colors text-sm lg:text-base font-medium">Profil</Link>
+          <Link href="/#realisations" className="hover:text-gold transition-colors text-sm lg:text-base font-medium">Réalisations</Link>
+          <Link href="/contact" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gold hover:text-black transition-all duration-300">Contact</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -59,55 +51,40 @@ const Header = () => {
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu - RIDEAU GAUCHE - FOND BLANC OPAQUE */}
+        {/* Mobile Menu - RIDEAU GAUCHE - FOND BLANC - TEXTE NOIR */}
         <div 
           className={`fixed top-0 left-0 h-full w-72 sm:w-80 bg-white shadow-2xl md:hidden z-50 transform transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
           {/* En-tête du menu */}
-          <div className="flex items-center justify-between p-5 border-b border-yellow-200">
+          <div className="flex items-center justify-between p-5 border-b border-gray-200">
             <span className="text-lg font-bold text-black">Menu</span>
             <button 
               onClick={() => setIsOpen(false)}
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow-50 hover:bg-yellow-100 transition-colors"
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
             >
               <X size={18} className="text-black" />
             </button>
           </div>
 
-          {/* Liste des liens - ALIGNÉS À GAUCHE */}
+          {/* Liste des liens */}
           <div className="py-6">
             {menuItems.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-4 px-6 py-4 text-left border-b border-gray-100 hover:bg-yellow-50 transition-all duration-200 group"
+                className="flex items-center gap-4 px-6 py-4 text-left border-b border-gray-100 hover:bg-gray-50 transition-all duration-200"
               >
-                <span className="text-gold">
+                <span className="text-black">
                   {item.icon}
                 </span>
-                <span className="text-base font-medium text-gray-800 group-hover:text-gold transition-colors">
+                <span className="text-base font-medium text-black">
                   {item.label}
                 </span>
               </Link>
             ))}
-          </div>
-
-          {/* Bouton Contact en bas */}
-          <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-yellow-200 bg-white">
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 bg-black text-white px-5 py-3 rounded-full font-medium hover:bg-gold hover:text-black transition-all duration-300"
-            >
-              <Phone size={18} />
-              <span>Contact rapide</span>
-            </Link>
-            <p className="text-xs text-center text-gray-500 mt-3">
-              LFD WEB Digital © 2026
-            </p>
           </div>
         </div>
       </nav>
