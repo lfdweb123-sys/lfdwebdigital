@@ -1,9 +1,6 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
-// IMPORT DIRECT DE L'IMAGE
-import profilePic from "../../public/images/votre-photo-pro.jpg";
 
 const HeroBanner = () => {
   return (
@@ -36,33 +33,45 @@ const HeroBanner = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            <Link href="/contact" className="btn-primary flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-black transition-all duration-300 flex items-center gap-2"
+            >
               Discuter de votre projet <ArrowRight size={18} />
             </Link>
-            <Link href="#services" className="border-2 border-black text-black px-6 py-3 rounded-full font-medium hover:bg-black hover:text-white transition-all duration-300">
+            <Link
+              href="#services"
+              className="border-2 border-black text-black px-6 py-3 rounded-full font-medium hover:bg-black hover:text-white transition-all duration-300"
+            >
               Voir les services
             </Link>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
-            <span className="bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-yellow-300">WordPress</span>
-            <span className="bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-yellow-300">Shopify</span>
-            <span className="bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-yellow-300">React / Next.js</span>
-            <span className="bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-yellow-300">Python</span>
+            <span className="bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-yellow-300">
+              WordPress
+            </span>
+            <span className="bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-yellow-300">
+              Shopify
+            </span>
+            <span className="bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-yellow-300">
+              React / Next.js
+            </span>
+            <span className="bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-yellow-300">
+              Python
+            </span>
           </div>
         </div>
 
-        {/* Image à droite */}
+        {/* Image à droite - SOLUTION QUI MARCHE SUR VERCEL */}
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-gold p-2 bg-white shadow-2xl animate-float">
             <div className="w-full h-full rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center overflow-hidden">
-              <Image 
-                src={profilePic}
+              {/* BALISE IMG STANDARD - MARCHE PARTOUT */}
+              <img
+                src="/images/votre-photo-pro.jpg"
                 alt="LFD WEB Digital - Développeur Web et Mobile"
-                width={400}
-                height={400}
-                className="object-cover w-full h-full"
-                priority
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
