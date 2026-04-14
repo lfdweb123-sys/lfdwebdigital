@@ -2,27 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  /* Fond principal : Dégradé blanc vers jaune très clair */
-  background: linear-gradient(135deg, #ffffff 0%, #fff9e6 50%, #fffbeb 100%);
-  color: #1f2937; /* Texte presque noir */
-  min-height: 100vh;
+@layer base {
+  body {
+    background: linear-gradient(135deg, #ffffff 0%, #fff9e6 50%, #fffbeb 100%);
+    color: #1f2937;
+    min-height: 100vh;
+  }
 }
 
-/* Animation personnalisée pour les cartes */
-.hover-scale {
-  transition: all 0.3s ease-in-out;
-}
-.hover-scale:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 25px -5px rgba(212, 175, 55, 0.1), 0 10px 10px -5px rgba(212, 175, 55, 0.04);
-  border-color: #D4AF37;
-}
-
-/* Style des boutons */
-.btn-primary {
-  @apply bg-black text-white px-6 py-3 rounded-full font-medium transition-all duration-300;
-}
-.btn-primary:hover {
-  @apply bg-gold text-black scale-105 shadow-lg;
+@layer utilities {
+  .hover-scale {
+    transition: all 0.3s ease-in-out;
+  }
+  .hover-scale:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(212, 175, 55, 0.1), 0 10px 10px -5px rgba(212, 175, 55, 0.04);
+    border-color: #D4AF37;
+  }
+  
+  .btn-primary {
+    @apply bg-black text-white px-6 py-3 rounded-full font-medium transition-all duration-300;
+  }
+  .btn-primary:hover {
+    @apply bg-gold text-black scale-105 shadow-lg;
+  }
 }

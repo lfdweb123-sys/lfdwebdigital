@@ -11,10 +11,6 @@ const config: Config = {
       colors: {
         'gold': '#D4AF37',
         'orange-custom': '#F97316',
-        'jaune-doux': '#FEF9C3',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       animation: {
         'float': 'float 3s ease-in-out infinite',
