@@ -55,7 +55,7 @@ const HeroBanner = () => {
             <div className="w-full h-full rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center overflow-hidden">
               <Image 
                 src="/images/votre-photo-pro.jpg" 
-                alt="LFD Développeur"
+                alt="LFD WEB Digital - Développeur wEB et Mobile"
                 width={400}
                 height={400}
                 className="object-cover w-full h-full"

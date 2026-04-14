@@ -61,7 +61,6 @@ const Footer = () => {
   const trustBadges = [
     { icon: <Star size={14} />, text: "5.0 (50+ avis)" },
     { icon: <Shield size={14} />, text: "Paiement sécurisé" },
-    { icon: <CreditCard size={14} />, text: "Satisfait ou remboursé" },
     { icon: <Clock size={14} />, text: "Support 24/7" }
   ];
 
@@ -229,7 +228,7 @@ const Footer = () => {
           className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
         >
           <div className="text-gray-600 text-center md:text-left">
-            © {currentYear} <span className="font-semibold text-black">LFD Digital</span>. Tous droits réservés.
+            © {currentYear} <span className="font-semibold text-black">LFD WEB Digital</span>. Tous droits réservés.
             <br className="md:hidden" />
             <span className="hidden md:inline mx-2">•</span>
             <span className="text-xs text-gray-500">Développé avec ❤️ pour votre succès</span>
