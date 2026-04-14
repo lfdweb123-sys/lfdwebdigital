@@ -1,6 +1,5 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ShoppingCart, Search, Target, Store } from "lucide-react";
 import { useRef } from "react";
 import Link from "next/link";
 import { 
@@ -16,7 +15,11 @@ import {
   Code,
   Palette,
   Globe,
-  Smartphone
+  Smartphone,
+  ShoppingCart,
+  Search,
+  Target,
+  Store
 } from "lucide-react";
 
 const ProfileSection = () => {
@@ -88,9 +91,6 @@ const ProfileSection = () => {
     { label: "Respect délais", value: "Top", icon: Clock, color: "text-blue-500", bg: "bg-blue-50" }
   ];
 
-  // Import manquant
-  const { ShoppingCart, Search, Target, Store: StoreIcon } = require("lucide-react");
-
   return (
     <section ref={containerRef} id="profil" className="container mx-auto px-4 py-20 overflow-hidden">
       <motion.div style={{ y }}>
@@ -145,7 +145,7 @@ const ProfileSection = () => {
           ))}
         </motion.div>
 
-        {/* Compétences - Style Réalisations */}
+        {/* Compétences */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -177,7 +177,7 @@ const ProfileSection = () => {
           </div>
         </motion.div>
 
-        {/* Expériences - Style Réalisations */}
+        {/* Expériences */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -213,7 +213,7 @@ const ProfileSection = () => {
           </div>
         </motion.div>
 
-        {/* Certifications - Style Réalisations */}
+        {/* Certifications */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -30,10 +30,9 @@ import {
   Truck,
   FileText,
   Languages,
-  Captcha,
+  Shield,
   LineChart,
   ShoppingBag,
-  Shield,
   Layers,
   GraduationCap,
   Wand2,
@@ -45,6 +44,7 @@ import {
   Repeat,
   Blocks
 } from "lucide-react";
+
 
 const ServicesSection = () => {
   const containerRef = useRef(null);
@@ -99,7 +99,7 @@ const ServicesSection = () => {
     { icon: <Smartphone size={20} />, title: "Intégrer publications réseaux sociaux" },
     { icon: <Code size={20} />, title: "Code a section on Shopify store" },
     { icon: <Languages size={20} />, title: "Traduire site Shopify/WordPress" },
-    { icon: <Captcha size={20} />, title: "Installer Google reCAPTCHA" },
+    { icon: <ShieldCheck size={20} />, title: "Installer Google reCAPTCHA" },
     { icon: <BarChart size={20} />, title: "Installer Google Analytics & Search Console" },
     { icon: <Store size={20} />, title: "Create WooCommerce store with WordPress" },
     { icon: <BadgeCheck size={20} />, title: "Add trust badge to Shopify store" },
