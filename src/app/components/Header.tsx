@@ -51,7 +51,7 @@ const Header = () => {
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu - RIDEAU GAUCHE - FOND BLANC - TEXTE NOIR */}
+        {/* Mobile Menu - RIDEAU GAUCHE */}
         <div 
           className={`fixed top-0 left-0 h-full w-72 sm:w-80 bg-white shadow-2xl md:hidden z-50 transform transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
@@ -68,8 +68,8 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Liste des liens */}
-          <div className="py-6">
+          {/* Liste des liens - FOND BLANC */}
+          <div className="py-6 bg-white">
             {menuItems.map((item, index) => (
               <Link
                 key={index}
