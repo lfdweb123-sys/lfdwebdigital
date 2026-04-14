@@ -73,7 +73,7 @@ const HeroBanner = () => {
             <div className="w-full h-full rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center overflow-hidden">
               {!imageError ? (
                 <Image
-                  src="/images/votre-photo-pro.jpg"
+                  src="/public/images/votre-photo-pro.jpg"
                   alt="LFD WEB Digital - Développeur Web et Mobile"
                   width={400}
                   height={400}
