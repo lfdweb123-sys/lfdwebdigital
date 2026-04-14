@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "LFD Digital | Développeur Web & Mobile Pro",
   description: "API REST, Extensions Chrome, SEO, Google Ads. +300 clients satisfaits.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
