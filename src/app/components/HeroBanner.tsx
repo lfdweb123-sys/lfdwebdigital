@@ -63,15 +63,15 @@ const HeroBanner = () => {
           </div>
         </div>
 
-        {/* Image à droite - SOLUTION QUI MARCHE SUR VERCEL */}
+        {/* Image à droite - CORRIGÉE : PAS DE TÊTE COUPÉE */}
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-gold p-2 bg-white shadow-2xl animate-float">
-            <div className="w-full h-full rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center overflow-hidden">
-              {/* BALISE IMG STANDARD - MARCHE PARTOUT */}
+            <div className="w-full h-full rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 overflow-hidden">
               <img
                 src="/images/votre-photo-pro.jpg"
                 alt="LFD WEB Digital - Développeur Web et Mobile"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
+                style={{ objectPosition: '50% 20%' }}
               />
             </div>
           </div>
