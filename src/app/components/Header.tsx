@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronRight, Home, Briefcase, User, FolderOpen, Phone } from "lucide-react";
+import { Menu, X, Home, Briefcase, User, FolderOpen, Phone } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,7 @@ const Header = () => {
           LFD WEB<span className="text-gold">.</span>Digital
         </Link>
 
-        {/* Desktop Menu - Centré */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {menuItems.map((item, index) => (
             <Link 
@@ -59,18 +59,10 @@ const Header = () => {
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Overlay sombre */}
-        {isOpen && (
-          <div 
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm md:hidden z-40"
-            onClick={() => setIsOpen(false)}
-          />
-        )}
-
-        {/* Mobile Menu - RIDEAU DROITE */}
+        {/* Mobile Menu - RIDEAU GAUCHE - FOND BLANC OPAQUE */}
         <div 
-          className={`fixed top-0 right-0 h-full w-72 sm:w-80 bg-white shadow-2xl md:hidden z-50 transform transition-transform duration-300 ease-in-out ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`fixed top-0 left-0 h-full w-72 sm:w-80 bg-white shadow-2xl md:hidden z-50 transform transition-transform duration-300 ease-in-out ${
+            isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
           {/* En-tête du menu */}
@@ -84,34 +76,34 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Liste des liens - ALIGNÉS À DROITE */}
+          {/* Liste des liens - ALIGNÉS À GAUCHE */}
           <div className="py-6">
             {menuItems.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-end gap-3 px-6 py-4 text-right border-b border-yellow-50 hover:bg-gradient-to-l hover:from-yellow-50 hover:to-transparent transition-all duration-200 group"
+                className="flex items-center gap-4 px-6 py-4 text-left border-b border-gray-100 hover:bg-yellow-50 transition-all duration-200 group"
               >
+                <span className="text-gold">
+                  {item.icon}
+                </span>
                 <span className="text-base font-medium text-gray-800 group-hover:text-gold transition-colors">
                   {item.label}
-                </span>
-                <span className="text-gold group-hover:translate-x-1 transition-transform">
-                  {item.icon}
                 </span>
               </Link>
             ))}
           </div>
 
-          {/* Bouton Contact spécial */}
-          <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-yellow-200 bg-gradient-to-t from-yellow-50 to-white">
+          {/* Bouton Contact en bas */}
+          <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-yellow-200 bg-white">
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-between bg-black text-white px-5 py-3 rounded-full font-medium hover:bg-gold hover:text-black transition-all duration-300 group"
+              className="flex items-center justify-center gap-2 bg-black text-white px-5 py-3 rounded-full font-medium hover:bg-gold hover:text-black transition-all duration-300"
             >
+              <Phone size={18} />
               <span>Contact rapide</span>
-              <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="text-xs text-center text-gray-500 mt-3">
               LFD WEB Digital © 2026
